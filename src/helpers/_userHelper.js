@@ -2,13 +2,15 @@ import Axios from 'axios';
 
 const server =
   process.env.NODE_ENV === 'production'
-    ? 'https://bvm-satserver.herokuapp.com
+    ? 'https://bvm-satserver.herokuapp.com'
     : process.env.REACT_APP_LOCAL_DB;
 
 // User requests
 
 function login(info) {
-  return Axios.post(server + '/login', info, {headers: {"Access-Control-Allow-Origin": "*"}}).then(async (res) => {
+  return Axios.post(server + '/login', info, {
+    headers: { 'Access-Control-Allow-Origin': '*' },
+  }).then(async (res) => {
     const token = await res.data.token;
     localStorage.setItem('token', token);
     return res.data.user;
@@ -16,7 +18,9 @@ function login(info) {
 }
 
 function register(info) {
-  return Axios.post(server + '/register', info, { headers: {"Access-Control-Allow-Origin": "*"}}).then(async (res) => {
+  return Axios.post(server + '/register', info, {
+    headers: { 'Access-Control-Allow-Origin': '*' },
+  }).then(async (res) => {
     console.log(res.data);
     const user = await res.data;
     const token = await user.token;

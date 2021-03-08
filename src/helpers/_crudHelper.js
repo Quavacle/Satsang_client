@@ -2,7 +2,7 @@ import Axios from 'axios';
 
 const server =
   process.env.NODE_ENV === 'production'
-    ? 'https://bvm-satserver.herokuapp.com
+    ? 'https://bvm-satserver.herokuapp.com'
     : process.env.REACT_APP_LOCAL_DB;
 
 let token = localStorage.getItem('token');
@@ -18,7 +18,7 @@ async function createInstance(book) {
   Axios.post(server + '/instances/create', book, {
     headers: {
       authorization: token,
-      {"Access-Control-Allow-Origin": "*"}
+      "Access-Control-Allow-Origin": "*"
     },
   })
     .then(async (res) => {
@@ -48,7 +48,7 @@ const deleteInstance = (id) => {
   Axios.delete(server + '/instances/' + id + '/delete', {
     headers: {
       authorization: token,
-      {"Access-Control-Allow-Origin": "*"}
+      "Access-Control-Allow-Origin": "*"
     },
   }).then((res) => {
     const result = res;
