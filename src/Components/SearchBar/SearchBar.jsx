@@ -23,6 +23,7 @@ const SearchBar = ({ current, setCurrent, setResult, handleSearch }) => {
     return () => {
       window.removeEventListener('keyup', handleEnter);
     };
+    // eslint-disable-next-line
   }, [current]);
 
   const handleChange = (e) => {
