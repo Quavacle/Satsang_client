@@ -18,6 +18,7 @@ async function createInstance(book) {
   Axios.post(server + '/instances/create', book, {
     headers: {
       authorization: token,
+      {"Access-Control-Allow-Origin": "*"}
     },
   })
     .then(async (res) => {
@@ -47,6 +48,7 @@ const deleteInstance = (id) => {
   Axios.delete(server + '/instances/' + id + '/delete', {
     headers: {
       authorization: token,
+      {"Access-Control-Allow-Origin": "*"}
     },
   }).then((res) => {
     const result = res;
@@ -63,6 +65,7 @@ async function getDashboard() {
   return Axios.get(server + '/dashboard', {
     headers: {
       authorization: token,
+      {"Access-Control-Allow-Origin": "*"}
     },
   })
     .then(async (res) => {
