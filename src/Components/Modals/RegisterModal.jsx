@@ -22,10 +22,16 @@ const RegisterModal = ({ setOpenRegister }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    helper.register(form).then((res) => {
-      console.log(res);
-      history.push('/dashboard');
-    });
+    helper
+      .register(form)
+      .then((res) => {
+        console.log(res);
+        history.push('/dashboard');
+      })
+      .catch((err) => {
+        console.log(err);
+        history.push('/index');
+      });
   };
 
   return (
