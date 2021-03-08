@@ -1,22 +1,21 @@
 import React, { useContext } from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import { acceptRequest } from '../helpers/_exchangeHelper';
 import { AlertContext } from '../providers/alertProvider';
 import { ButtonStyles } from './styles/ButtonStyles';
-import { ListBodyStyles, ListHeaderStyles } from './styles/DashboardStyles';
 import { ListStyles } from './styles/ListStyles';
 
-const PendingStyles = styled.div`
-  display: flex;
-  flex-direction: column;
-  background-color: ${(props) => props.theme.secondary};
+// const PendingStyles = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   background-color: ${(props) => props.theme.secondary};
 
-  * {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-`;
+//   * {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//   }
+// `;
 export default function PendingLoan({ books }) {
   console.log('PENDING HERE HELLO');
   console.log(books);

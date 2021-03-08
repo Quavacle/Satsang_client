@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
 import AcceptReturn from '../AcceptReturn';
 import RemoveBook from '../RemoveBook';
 import ReturnBook from '../ReturnBook';

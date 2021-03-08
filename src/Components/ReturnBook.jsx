@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import { deleteInstance } from '../helpers/_crudHelper';
 import { returnBook } from '../helpers/_exchangeHelper';
 import { AlertContext } from '../providers/alertProvider';
 import { ButtonStyles } from './styles/ButtonStyles';

@@ -125,7 +125,6 @@ const Dashboard = () => {
           <DashList
             type={'Owned'}
             books={dash.owned}
-            type='owned'
             removeEntry={removeEntry}
           />
         ) : null}

@@ -1,11 +1,10 @@
 import Axios from 'axios';
-import { useContext } from 'react';
+const server =
+  process.env.NODE_ENV === 'production'
+    ? 'https://bvm-satserver.herokuapp.com/'
+    : process.env.REACT_APP_LOCAL_DB;
 
-import { AlertContext } from '../providers/alertProvider';
-const server = process.env.REACT_APP_LOCAL_DB;
-const apiKey = process.env.REACT_APP_API_KEY;
 const token = localStorage.getItem('token');
-const tokenHeader = 'fix me';
 // Book Exchanging
 
 const requestInstance = (instance) => {
@@ -47,12 +46,18 @@ const acceptRequest = (id, user) => {
 
 const denyRequest = (instance) => {
   const { id } = instance._id;
-  Axios.put(server + '/instances/' + id + '/deny', {}, tokenHeader()).then(
-    (res) => {
-      const status = res.status;
-      return status;
+  Axios.put(
+    server + '/instances/' + id + '/deny',
+    {},
+    {
+      headers: {
+        authorization: token,
+      },
     }
-  );
+  ).then((res) => {
+    const status = res.status;
+    return status;
+  });
 };
 
 const returnBook = (id) => {

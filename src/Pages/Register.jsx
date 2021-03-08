@@ -2,7 +2,6 @@ import React, { useState, history } from 'react';
 import * as helper from '../helpers/_userHelper';
 
 import RegisterForm from '../Components/Forms/RegisterForm';
-const server = process.env.REACT_APP_LOCAL_DB;
 
 // @@ TODO- Add client-side validation, split in to smaller components
 // @@ TODO- Styling

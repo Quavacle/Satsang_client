@@ -5,7 +5,6 @@ import { ButtonStyles } from '../Components/styles/ButtonStyles';
 import * as helpers from '../helpers/_searchHelper';
 import HeaderStyles from '../Components/styles/HeaderStyles';
 import {
-  ContainerStyles,
   ShellStyles,
   SearchContainerStyles,
 } from '../Components/styles/ContainerStyles';

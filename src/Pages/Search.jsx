@@ -29,7 +29,7 @@ const Browse = () => {
       }, {});
       setBooks(organized);
     }
-  }, {});
+  }, []);
 
   const handleChange = (e) => {
     setDisplay(e.target.value.toLowerCase());

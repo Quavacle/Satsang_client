@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import * as helpers from '../../helpers/_searchHelper';
 import { ButtonStyles } from '../styles/ButtonStyles';
 import InputStyles from '../styles/InputStyles';
 import './searchbar.css';
