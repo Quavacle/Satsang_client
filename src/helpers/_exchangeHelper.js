@@ -1,7 +1,7 @@
 import Axios from 'axios';
 const server =
   process.env.NODE_ENV === 'production'
-    ? 'https://bvm-satserver.herokuapp.com'
+    ? 'http://bvm-satserver.herokuapp.com'
     : process.env.REACT_APP_LOCAL_DB;
 
 const token = localStorage.getItem('token');
