@@ -9,7 +9,8 @@ import { Link } from 'react-router-dom';
 const BookBrief = (props) => {
   const [openRequest, setOpenRequest] = useState(false);
   const { addMessage } = useContext(AlertContext);
-  const { id, title, authors, imageLinks } = props.book;
+  const { _id, title, authors, imageLinks } = props.book;
+  const instId = props.instances[0]._id;
 
   const mapAuth = () => {
     return authors.map((authieboy, index) => <li key={index}>{authieboy}</li>);
@@ -32,10 +33,10 @@ const BookBrief = (props) => {
           allBooks={props.instances}
         />
       ) : null}
-      <BookBriefStyles key={id}>
+      <BookBriefStyles key={_id}>
         <div className='header'>
           <h1>
-            <Link to={'/detail/' + id}>{title}</Link>
+            <Link to={'/detail/' + instId}>{title}</Link>
           </h1>
           {imageLinks && <img src={imageLinks?.thumbnail} alt={title} />}
           <ul>{authors ? mapAuth() : null}</ul>
