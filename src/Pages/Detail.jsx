@@ -9,8 +9,6 @@ const Detail = ({ match }) => {
   useEffect(() => {
     Axios.get(server + '/instances/' + match.params.id, {})
       .then((res) => {
-        const data = res.data;
-
         setBook(res.data.book);
       })
       .catch((err) => console.log(err));

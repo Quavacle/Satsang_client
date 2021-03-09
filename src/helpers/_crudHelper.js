@@ -81,7 +81,7 @@ async function getDashboard() {
 // Detail Page
 
 async function getDetail(id) {
-  Axios.get(server + '/instances/' + id, {})
+  Axios.get(server + '/instances/' + id)
     .then((res) => {
       const data = res.data;
 
