@@ -8,13 +8,18 @@ import {
   ShellStyles,
 } from '../Components/styles/ContainerStyles';
 
+const server =
+  process.env.NODE_ENV === 'production'
+    ? 'https://bvm-satserver.herokuapp.com'
+    : process.env.REACT_APP_LOCAL_DB;
+
 const Browse = () => {
   const [books, setBooks] = useState(null);
   const [display, setDisplay] = useState(null);
   const [filtered, setFiltered] = useState(null);
 
   useEffect(() => {
-    Axios.get('https://localhost:3000/instances/index', {
+    Axios.get(server + '/instances/index', {
       headers: { 'Access-Control-Allow-Origin': '*' },
     })
       .then((res) => organizeBooks(res.data))
