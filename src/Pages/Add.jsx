@@ -33,8 +33,6 @@ const Add = () => {
   };
 
   const handleSearch = () => {
-    console.log('Search hit');
-    console.log(page);
     helpers
       .search(current, page)
       .then((res) => setResult(res))

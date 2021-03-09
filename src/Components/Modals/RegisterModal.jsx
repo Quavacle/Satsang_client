@@ -25,7 +25,6 @@ const RegisterModal = ({ setOpenRegister }) => {
     helper
       .register(form)
       .then((res) => {
-        console.log(res);
         history.push('/dashboard');
       })
       .catch((err) => {

@@ -23,7 +23,6 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     helper.register(form).then((res) => {
-      console.log(res);
       history.push('/dashboard');
     });
   };

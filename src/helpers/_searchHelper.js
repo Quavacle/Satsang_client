@@ -17,7 +17,6 @@ async function search(query, startPosition = 0) {
       apiKey
   )
     .then(async (res) => {
-      console.log(res.data);
       const books = await mapResults(res.data.items);
       return books;
     })

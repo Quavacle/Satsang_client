@@ -9,14 +9,13 @@ const Detail = ({ match }) => {
   useEffect(() => {
     Axios.get(server + '/instances/' + match.params.id, {})
       .then((res) => {
-        console.log(res);
         const data = res.data;
-        console.log(data);
+
         setBook(res.data.book);
       })
       .catch((err) => console.log(err));
   }, [match.params.id]);
-  console.log(book);
+
   return (
     <div className='detail-container'>
       {book && <BookCard book={book} imageLinks={book.cover} />}

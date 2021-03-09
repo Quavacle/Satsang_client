@@ -52,7 +52,7 @@ const deleteInstance = (id) => {
     },
   }).then((res) => {
     const result = res;
-    console.log(result);
+
     return result;
   });
 };
@@ -60,7 +60,6 @@ const deleteInstance = (id) => {
 // Dashboards/Index
 
 async function getDashboard() {
-  console.log('Getting dash!');
   let token = localStorage.getItem('token');
   return Axios.get(server + '/dashboard', {
     headers: {
@@ -82,11 +81,10 @@ async function getDashboard() {
 // Detail Page
 
 async function getDetail(id) {
-  console.log(id);
   Axios.get(server + '/instances/' + id, {})
     .then((res) => {
       const data = res.data;
-      console.log(data);
+
       return data;
     })
     .catch((err) => console.log(err));

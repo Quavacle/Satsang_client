@@ -46,7 +46,6 @@ const Dashboard = () => {
     getDashboard()
       .then((res) => {
         const data = res.results;
-        console.log(data);
         setDash(data);
       })
       .catch((err) => console.log(err));
@@ -59,7 +58,6 @@ const Dashboard = () => {
   };
 
   const removeEntry = (index) => {
-    console.log(index);
     const newOwned = dash.owned;
     dash.owned.splice(index, 1);
     setDash({ ...dash, owned: newOwned });

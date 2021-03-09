@@ -21,7 +21,6 @@ function register(info) {
   return Axios.post(server + '/register', info, {
     headers: { 'Access-Control-Allow-Origin': '*' },
   }).then(async (res) => {
-    console.log(res.data);
     const user = await res.data;
     const token = await user.token;
     localStorage.setItem('token', token);

@@ -24,7 +24,6 @@ const requestInstance = (instance) => {
 };
 
 const acceptRequest = (id, user) => {
-  console.log(user);
   Axios.put(
     server + '/instances/' + id + '/accept',
     {

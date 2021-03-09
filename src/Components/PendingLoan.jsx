@@ -17,8 +17,6 @@ import { ListStyles } from './styles/ListStyles';
 //   }
 // `;
 export default function PendingLoan({ books }) {
-  console.log('PENDING HERE HELLO');
-  console.log(books);
   const { addMessage } = useContext(AlertContext);
 
   function handleAccept(e) {
