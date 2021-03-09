@@ -7,6 +7,11 @@ import RegisterModal from '../Modals/RegisterModal';
 import NavButtonStyles from '../styles/NavButtonStyles';
 import NavStyles from '../styles/NavStyles';
 
+const server =
+  process.env.NODE_ENV === 'production'
+    ? 'https://bvm-satserver.herokuapp.com'
+    : process.env.REACT_APP_LOCAL_DB;
+
 const Nav = () => {
   const [openLogin, setOpenLogin] = useState(false);
   const [openRegister, setOpenRegister] = useState(false);
@@ -17,7 +22,7 @@ const Nav = () => {
   const token = localStorage.getItem('token');
 
   if (token && user.user === null) {
-    Axios.get('http://localhost:3000/users/auth', {
+    Axios.get(server + '/users/auth', {
       headers: { authorization: token },
     })
       .then((res) => changeUser(res?.data))
