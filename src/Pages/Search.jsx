@@ -19,14 +19,13 @@ const Browse = () => {
   const [filtered, setFiltered] = useState(null);
 
   useEffect(() => {
-    Axios.get(server + '/instances/index', {
-      headers: { 'Access-Control-Allow-Origin': '*' },
-    })
+    Axios.get(server + '/instances/index', {})
       .then((res) => organizeBooks(res.data))
       .catch((err) => console.error(err));
 
     function organizeBooks(instances) {
       const organized = instances.reduce((acc, current) => {
+        if (current.book === null) return acc;
         const currentBookId = current.book._id;
         if (!acc[currentBookId]) {
           acc[currentBookId] = [];

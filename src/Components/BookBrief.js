@@ -10,8 +10,7 @@ const BookBrief = (props) => {
   const [openRequest, setOpenRequest] = useState(false);
   const { addMessage } = useContext(AlertContext);
   const { _id, title, authors, imageLinks } = props.book;
-  const instId = props.instances[0]._id;
-
+  const instId = props?.instances[0]?._id;
   const mapAuth = () => {
     return authors.map((authieboy, index) => <li key={index}>{authieboy}</li>);
   };
