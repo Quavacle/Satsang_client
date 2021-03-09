@@ -36,6 +36,7 @@ const updateInstance = (instance) => {
       headers: {
         authorization: token,
       },
+    }
   ).then((res) => {
     const updatedBook = res.data.book;
     return updatedBook;
