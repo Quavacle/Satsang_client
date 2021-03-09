@@ -6,10 +6,6 @@ const server =
     : process.env.REACT_APP_LOCAL_DB;
 
 let token = localStorage.getItem('token');
-const tokenHeader = () => {
-  let token = localStorage.getItem('token');
-  return token;
-};
 
 // Book CRUD
 
@@ -18,7 +14,6 @@ async function createInstance(book) {
   Axios.post(server + '/instances/create', book, {
     headers: {
       authorization: token,
-      'Access-Control-Allow-Origin': '*',
     },
   })
     .then(async (res) => {
@@ -37,7 +32,10 @@ const updateInstance = (instance) => {
   Axios.put(
     server + '/instances/' + id + '/update',
     { instance },
-    tokenHeader()
+    {
+      headers: {
+        authorization: token,
+      },
   ).then((res) => {
     const updatedBook = res.data.book;
     return updatedBook;
@@ -48,11 +46,9 @@ const deleteInstance = (id) => {
   Axios.delete(server + '/instances/' + id + '/delete', {
     headers: {
       authorization: token,
-      'Access-Control-Allow-Origin': '*',
     },
   }).then((res) => {
     const result = res;
-
     return result;
   });
 };
@@ -64,7 +60,6 @@ async function getDashboard() {
   return Axios.get(server + '/dashboard', {
     headers: {
       authorization: token,
-      'Access-Control-Allow-Origin': '*',
     },
   })
     .then(async (res) => {
@@ -84,7 +79,6 @@ async function getDetail(id) {
   Axios.get(server + '/instances/' + id)
     .then((res) => {
       const data = res.data;
-
       return data;
     })
     .catch((err) => console.log(err));

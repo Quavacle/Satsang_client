@@ -4,6 +4,7 @@ import { AlertContext } from '../providers/alertProvider';
 import RequestModal from './Modals/RequestModal';
 import { ButtonStyles } from './styles/ButtonStyles';
 import BookBriefStyles from './styles/BookBriefStyles';
+import { Link } from 'react-router-dom';
 
 const BookBrief = (props) => {
   const [openRequest, setOpenRequest] = useState(false);
@@ -33,7 +34,9 @@ const BookBrief = (props) => {
       ) : null}
       <BookBriefStyles key={id}>
         <div className='header'>
-          <h1>{title}</h1>
+          <h1>
+            <Link to={'/detail/' + id}>{title}</Link>
+          </h1>
           {imageLinks && <img src={imageLinks?.thumbnail} alt={title} />}
           <ul>{authors ? mapAuth() : null}</ul>
         </div>

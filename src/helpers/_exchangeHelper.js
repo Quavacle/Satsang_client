@@ -14,7 +14,6 @@ const requestInstance = (instance) => {
     {
       headers: {
         authorization: token,
-        'Access-Control-Allow-Origin': '*',
       },
     }
   ).then((res) => {
@@ -32,7 +31,6 @@ const acceptRequest = (id, user) => {
     {
       headers: {
         authorization: token,
-        'Access-Control-Allow-Origin': '*',
       },
     }
   )
@@ -53,7 +51,6 @@ const denyRequest = (instance) => {
     {
       headers: {
         authorization: token,
-        'Access-Control-Allow-Origin': '*',
       },
     }
   ).then((res) => {
@@ -69,7 +66,6 @@ const returnBook = (id) => {
     {
       headers: {
         authorization: token,
-        'Access-Control-Allow-Origin': '*',
       },
     }
   ).then((res) => {

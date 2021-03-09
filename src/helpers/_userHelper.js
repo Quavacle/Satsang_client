@@ -8,9 +8,7 @@ const server =
 // User requests
 
 function login(info) {
-  return Axios.post(server + '/login', info, {
-    headers: { 'Access-Control-Allow-Origin': '*' },
-  }).then(async (res) => {
+  return Axios.post(server + '/login', info, {}).then(async (res) => {
     const token = await res.data.token;
     localStorage.setItem('token', token);
     return res.data.user;
@@ -18,9 +16,7 @@ function login(info) {
 }
 
 function register(info) {
-  return Axios.post(server + '/register', info, {
-    headers: { 'Access-Control-Allow-Origin': '*' },
-  }).then(async (res) => {
+  return Axios.post(server + '/register', info, {}).then(async (res) => {
     const user = await res.data;
     const token = await user.token;
     localStorage.setItem('token', token);
