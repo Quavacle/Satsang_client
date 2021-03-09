@@ -14,7 +14,9 @@ const Browse = () => {
   const [filtered, setFiltered] = useState(null);
 
   useEffect(() => {
-    Axios.get('http://localhost:3000/instances/index')
+    Axios.get('http://localhost:3000/instances/index', {
+      headers: { 'Access-Control-Allow-Origin': '*' },
+    })
       .then((res) => organizeBooks(res.data))
       .catch((err) => console.error(err));
 
