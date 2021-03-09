@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Axios from 'axios';
 import BookCard from '../Components/BookCard/BookCard';
-const server = process.env.REACT_APP_LOCAL_DB;
+const server =
+  process.env.NODE_ENV === 'production'
+    ? 'https://bvm-satserver.herokuapp.com'
+    : process.env.REACT_APP_LOCAL_DB;
 
 const Detail = ({ match }) => {
   const [book, setBook] = useState(null);
